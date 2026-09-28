@@ -1,3 +1,4 @@
+import { createId } from '@/shared/lib';
 import { useRef, type FormEvent, type KeyboardEvent } from 'react';
 import { Send } from 'lucide-react';
 import { useChats, type Chat } from '@/entities/chat';
@@ -15,7 +16,7 @@ export function MessageComposer({ chat, disabled }: { chat: Chat; disabled: bool
   async function submit(event: FormEvent) {
     event.preventDefault();
     if (!valid || !api) return;
-    const id = crypto.randomUUID();
+    const id = createId();
     const message = text.trim();
     useChats.getState().setDraft(chat.id, '');
     useChats.getState().addMessage(chat.id, {

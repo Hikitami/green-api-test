@@ -1,3 +1,4 @@
+import { createId } from '@/shared/lib';
 // Вымышленные контакты. Формат событий соответствует GREEN-API Telegram.
 export const contacts = [
   { id: '100001', title: 'Алексей Морозов', username: '@alexey_demo', phone: 79990000001 },
@@ -10,7 +11,7 @@ export function textEvent(
   text: string,
   outgoing = false,
   timestamp = Date.now(),
-  id = crypto.randomUUID(),
+  id = createId(),
 ) {
   const contact = contacts.find((item) => item.id === chatId);
   return {

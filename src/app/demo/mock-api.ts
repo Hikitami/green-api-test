@@ -1,3 +1,4 @@
+import { createId } from '@/shared/lib';
 import { ApiError, type GreenApi, type Notification } from '@/shared/api';
 import { contacts, historyEvents, textEvent } from './fixtures';
 
@@ -70,7 +71,7 @@ export function createMockApi(onFailureConsumed?: () => void) {
           429,
         );
       }
-      const idMessage = crypto.randomUUID();
+      const idMessage = createId();
       enqueue(
         { typeWebhook: 'outgoingMessageStatus', chatId, idMessage, status: 'delivered' },
         400,

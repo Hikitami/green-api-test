@@ -1,3 +1,4 @@
+import { createId } from '@/shared/lib';
 import { useChats } from '@/entities/chat';
 import { useSession } from '@/entities/session';
 import { ApiError, errorMessage } from '@/shared/api';
@@ -36,7 +37,7 @@ export async function retryMessage(chatId: string, id: string) {
   )
     return;
   // Новый ID попытки отделяет запоздавшие статусы предыдущей отправки.
-  const attemptId = crypto.randomUUID();
+  const attemptId = createId();
   useChats.getState().restartMessage(chatId, id, attemptId, Date.now());
   await sendStoredMessage(chatId, attemptId);
 }
