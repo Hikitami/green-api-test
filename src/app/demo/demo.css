@@ -1,0 +1,61 @@
+.demo-launch {
+  position: fixed;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  border-radius: 24px;
+  padding: 12px 20px;
+  background: #263e50;
+  color: white;
+  box-shadow: 0 4px 18px #263e5030;
+  font-size: 12px;
+}
+.demo-toolbar {
+  background: #fff2d8;
+  color: #735b29;
+  padding: 9px 18px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 11px;
+}
+.demo-toolbar strong span {
+  font-weight: 400;
+  margin-left: 9px;
+}
+.demo-toolbar > div {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.demo-toolbar button {
+  color: #735b29;
+  background: #fffaf0;
+  border: 1px solid #e9d8b2;
+  border-radius: 6px;
+  font-size: 10px;
+  padding: 6px 9px;
+}
+body:has(.demo-toolbar) .messenger-page {
+  height: calc(100dvh - 48px);
+}
+@media (max-width: 1050px) {
+  .demo-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+    height: 96px;
+    gap: 5px;
+    padding: 8px 12px;
+  }
+  .demo-toolbar strong span {
+    display: block;
+    margin: 3px 0 0;
+    font-size: 9px;
+  }
+  body:has(.demo-toolbar) .messenger-page {
+    height: calc(100dvh - 96px);
+  }
+}
