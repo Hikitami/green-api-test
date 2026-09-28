@@ -184,31 +184,21 @@ input:disabled {
 }
 .brand-icon {
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
   width: 42px;
   height: 42px;
-  border-radius: 50%;
-  color: #fff;
-  background: linear-gradient(150deg, #46b7ea, #168cc7);
-  box-shadow: 0 4px 10px #2499d518;
+  flex-shrink: 0;
 }
-.brand-icon svg {
-  width: 24px;
-  height: 24px;
-  transform: translate(-1px, 1px) rotate(-9deg);
-  fill: #fff;
-  stroke: #fff;
+.brand-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 .brand-icon-large {
   width: 91px;
   height: 91px;
   box-shadow: 0 9px 27px #2499d52b;
 }
-.brand-icon-large svg {
-  width: 49px;
-  height: 49px;
-}
+
 .eyebrow {
   font-size: 10px;
   font-weight: 800;
@@ -532,10 +522,7 @@ input:disabled {
   width: 36px;
   height: 36px;
 }
-.sidebar-header .brand-icon svg {
-  width: 21px;
-  height: 21px;
-}
+
 .sidebar-header .brand strong {
   font-size: 18px;
 }
